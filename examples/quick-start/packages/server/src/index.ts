@@ -118,7 +118,8 @@ respond: "I'm sorry, I don't know the answer to that question. Please try to rep
 // with the chatbot.
 const mongodb = new MongoClient(MONGODB_CONNECTION_URI);
 const conversations = makeMongoDbConversationsService(
-  mongodb.db(MONGODB_DATABASE_NAME)
+  mongodb.db(MONGODB_DATABASE_NAME),
+  systemPrompt
 );
 
 // Create the MongoDB Chatbot Server Express.js app configuration
@@ -127,7 +128,6 @@ const config: AppConfig = {
     llm,
     conversations,
     generateUserPrompt,
-    systemPrompt,
   },
   maxRequestTimeoutMs: 30000,
   serveStaticSite: true,

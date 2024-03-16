@@ -13,7 +13,7 @@ function MyApp() {
   ];
   return (
     <div>
-      <Chatbot darkMode={true} serverBaseUrl="http://localhost:3000/api/v1">
+      <Chatbot darkMode={true} serverBaseUrl="https://fuzzy-bassoon-qp49p5q55c465q-3000.app.github.dev/api/v1">
         <>
           <InputBarTrigger suggestedPrompts={suggestedPrompts} />
           <FloatingActionButtonTrigger text="My MongoDB AI" />
